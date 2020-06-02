@@ -12,5 +12,11 @@ pipeline {
         sh "docker pull dkulikova/spring-petclinic:${params.dockerTagName}"
       }
     }
+    stage('Start container') {
+      agent any
+      steps {
+	sh "docker run -p 8081:8080 dkulikova/spring-petclinic"
+      }
+    }
   }
 }
