@@ -15,7 +15,7 @@ pipeline {
     stage('Start container') {
       agent any
       steps {
-	sh "docker run -p 8081:8080 dkulikova/spring-petclinic"
+	sh "docker run -d -p 8081:8080 dkulikova/spring-petclinic"
       }
     }
   }
